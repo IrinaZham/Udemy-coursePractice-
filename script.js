@@ -1,4 +1,5 @@
-const numberOfFilms=+prompt('Cuantas peliqulas has visto?','');
+'use strict'
+const numberOfFilms=+prompt('¿Cuántas películas has visto?','');
 const personalMovieDB={
     count:numberOfFilms,
     movies:{},
@@ -6,34 +7,27 @@ const personalMovieDB={
     genres:[],
     private:false
 };
-/*const a=prompt('La ultima peliqula que has visto?',''),
-      b=prompt('Tu nota?',''),
-      c=prompt('La ultima peliqula que has visto?',''),
-      d=prompt('Tu nota?','');*/
 
-      for (let i=0; i<2; i++){
-      const  a=prompt('La ultima peliqula que has visto?',''),
-      b=prompt('Tu nota?','');
-      if (a!=null && b!=null && a!='' && b!='' && a.length<50){
-      personalMovieDB.movies[a]=b; /*personalMovieDB.movies.a - ploho rabotaet, a -svoystvo obj,b-znacheniye*/ 
-      console.log('done')}
-      else {
+for (let i=0; i<2; i++){
+  const  a=prompt('¿La última película que has visto?',''),
+         b=prompt('¿Cuál es tu nota?','');
+  if (a!=null && b!=null && a!='' && b!='' && a.length<50){ /*50 - eto limit po simbolam ''-eto pustaya stroka=ok, null=otmena*/
+      personalMovieDB.movies[a]=b; /*personalMovieDB.movies.a - ploho rabotaet*/ 
+      console.log('done')
+  } else {
         console.log('error');
-        i--;
-      }
-    }
-    if(personalMovieDB.count<10){
-        console.log("has visto malo filmov")
-    }
-    else if(personalMovieDB.count>=10 && personalMovieDB.count<30){
-        console.log("klassic")
-    }
-    else if(personalMovieDB.count>=30){
-        console.log("kinoman")
-    }
-    else {console.lof('error')};
+        i--; /*povtor voprosov*/
+  }
+}
+if(personalMovieDB.count<10){
+        console.log("Has visto pocas películas")
+  } else if(personalMovieDB.count>=10 && personalMovieDB.count<30){
+        console.log("Has visto una cantidad moderada de películas")
+  } else if(personalMovieDB.count>=30){
+        console.log("Has visto muchas películas ")
+  }
+else {console.lof('error')
 
+};
 
-     
-    /*  personalMovieDB.movies[c]=d;*/
-      console.log(personalMovieDB);
+console.log(personalMovieDB);
