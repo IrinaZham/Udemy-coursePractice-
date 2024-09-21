@@ -21,7 +21,7 @@ const personalMovieDB={
 function rememberMyFilms(){
 
       for (let i=0; i<2; i++){
-            const  a=prompt('¿La última película que has visto?',''),
+            const  a=prompt('¿La última película que has visto?','').trim(),
                    b=prompt('¿Cuál es tu nota?','');
             if (a!=null && b!=null && a!='' && b!='' && a.length<50){ /*50 - eto limit po simbolam ''-eto pustaya stroka=ok, null=otmena*/
                 personalMovieDB.movies[a]=b; /*personalMovieDB.movies.a - ploho rabotaet*/ 
